@@ -1,4 +1,4 @@
-# deni-react-modal
+# deni-react-popover-selector
 A modern popover selector for React
 
 [DEMOS](https://denimar.github.io/deni-react-popover-selector/)
