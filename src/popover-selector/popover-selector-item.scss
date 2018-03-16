@@ -1,0 +1,45 @@
+.deni-react-popover-selector-item-container {
+  border: solid 1px silver;
+  //padding: 4px;
+  //margin-right: 10px;
+  //margin-bottom: 10px;
+
+  padding: 3px 6px 3px 5px;
+  border-radius: 3px;
+  //line-height: 12px;
+  font-size: 12px;
+  margin: 5px;
+  background-color: #e4e4e4;
+  //filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#f4f4f4', GradientType=0 );
+  background-image: -webkit-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-image: linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  color: #333;
+  box-shadow: 0 0 2px #ffffff inset, 0 1px 2px rgba(0, 0, 0, 0.15);
+  border: 1px solid #bdbdbd;
+
+  .deni-react-popover-selector-item {
+
+    &.no-close-button {
+      cursor: pointer;
+    }
+
+    .deni-react-popover-selector-item-close-button {
+      background: none;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      color: #999999;
+      font-size: 14px;
+      line-height: 12px;
+      padding: 0 6px 0 2px;
+
+      &:hover {
+        color: #336699;
+      }
+    }
+
+    .deni-react-popover-selector-item-text {
+    }
+
+  }
+}
