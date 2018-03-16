@@ -13,8 +13,14 @@
     "build": "./node_modules/.bin/webpack --config webpack/webpack.config.prod.js",
     "lint": "eslint src"
   },
-  "license": "MIT",
-  "homepage": "http://github.com.br",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/denimar/deni-react-popover-selector"
+  },
+  "bugs": {
+    "url": "https://github.com/denimar/deni-react-popover-selector/issues"
+  },
+  "homepage": "https://github.com/denimar/deni-react-popover-selector",
   "devDependencies": {
     "autoprefixer": "^7.1.2",
     "babel": "^6.23.0",
