@@ -26,7 +26,7 @@ import PopoverSelector from 'deni-react-popover-selector'
     onGetTextItem={ this.onGetTextItem.bind(this) }
   >
   </PopoverSelector>
-  
+
   const items = [
     {
       id: 1,
@@ -39,8 +39,8 @@ import PopoverSelector from 'deni-react-popover-selector'
     ...
   ]
 
-...
-  
+```
+
 ## Author
 
 [Denimar de Moraes](http://github.com/denimar) (denimar@gmail.com) is a full-stack developper at the Wplex, Florianópolis, Santa Catarina, Brazil.
