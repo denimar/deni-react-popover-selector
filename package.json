@@ -1,6 +1,6 @@
 {
   "name": "deni-react-popover-selector",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "author": "Denimar de Moraes <denimar@gmail.com>",
   "description": "A modern popover selector for React.",
   "main": "build/deni-react-popover-selector.js",
