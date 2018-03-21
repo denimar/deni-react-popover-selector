@@ -1,6 +1,8 @@
 # deni-react-popover-selector
 A modern popover selector for React
 
+![alt text](https://raw.githubusercontent.com/denimar/deni-react-popover-selector/master/deni-react-popover-selector.gif)
+
 [DEMOS](https://denimar.github.io/deni-react-popover-selector/)
 
 
