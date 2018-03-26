@@ -147,13 +147,11 @@ class DeniReactSelectorPopover extends React.Component {
             this.onRenderItems(this.state.selectedItems, true)
           }
           {
-            this.state.selectedItems.length > 0 ? (
-              <input
-                className="deni-react-popover-selector-input"
-                onKeyUp={ this.selectorInputKeyUp.bind(this) }
-                placeholder='digite para filtrar'
-              />
-            ) : null
+            <input
+              className="deni-react-popover-selector-input"
+              onKeyUp={ this.selectorInputKeyUp.bind(this) }
+              placeholder='digite para filtrar'
+            />
           }
         </div>
         <DeniReactPopover
