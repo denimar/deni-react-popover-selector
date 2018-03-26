@@ -141,7 +141,7 @@ class DeniReactSelectorPopover extends React.Component {
       <div id={ this.elementId } className="deni-react-popover-selector-container">
         <div id={ this.elementId + '-panel' } onMouseDown={ this.popoverSelectorMouseDown.bind(this) } className="deni-react-popover-selector">
           {
-            this.state.selectedItems.length === 0 ? (<img className="deni-react-popover-selector-loading" src={ loadingGif } />) : null
+            this.props.loading === true ? (<img className="deni-react-popover-selector-loading" src={ loadingGif } />) : null
           }
           {
             this.onRenderItems(this.state.selectedItems, true)
