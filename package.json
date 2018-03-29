@@ -61,7 +61,7 @@
   "dependencies": {
     "axios": "^0.17.1",
     "create-react-class": "^15.6.3",
-    "deni-react-popover": "0.0.6",
+    "deni-react-popover": "0.0.8",
     "react-icons": "^2.2.7",
     "react-router-with-props": "^0.1.1",
     "react-syntax-highlighter": "^6.1.2",

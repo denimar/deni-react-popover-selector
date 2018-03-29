@@ -14,6 +14,7 @@ class DeniReactSelectorPopover extends React.Component {
     super(props);
     this.elementId = this._generateElementId();
     this.state = this._receiveProps(props);
+    this.anyItemAdded = false;
   }
 
   componentWillReceiveProps(nextProps) {
@@ -57,14 +58,10 @@ class DeniReactSelectorPopover extends React.Component {
     }, 100);
   }
 
-  onBeforeShow(element, targetElement) {
-    element.style.left = targetElement.offsetLeft + 'px';
-    element.style.width = targetElement.offsetWidth + 'px';
-  }
-
   onAddItem(itemToAdd) {
     let selectedItems = this.state.selectedItems.concat([itemToAdd]);
 
+    this.anyItemAdded = true;
     setTimeout(() => {
       this.setState({
         selectedItems: selectedItems,
@@ -117,8 +114,6 @@ class DeniReactSelectorPopover extends React.Component {
   }
 
   selectorInputKeyUp(e) {
-    console.log('keycode -> ' + e.keyCode);
-
     if (this.popoverRef.isShowing()) {
       if (e.keyCode === 13) { //RETURN
         if (this.state.itemsToSelect.length === 1) {
@@ -134,6 +129,21 @@ class DeniReactSelectorPopover extends React.Component {
     this.setState({
       itemsToSelect: this._getItemsToSelect(this.props.items, this.state.selectedItems)
     });
+  }
+
+  onBeforeShow(element, targetElement) {
+    element.style.left = targetElement.offsetLeft + 'px';
+    element.style.width = targetElement.offsetWidth + 'px';
+  }
+
+  onBeforeHide(popoverElem) {
+    if (this.anyItemAdded) {
+      this.anyItemAdded = false;
+
+      if (this.props.onSaveBeforeHide) {
+        this.props.onSaveBeforeHide();
+      }
+    }
   }
 
   render() {
@@ -160,8 +170,9 @@ class DeniReactSelectorPopover extends React.Component {
           }}
           target={ this.elementId + '-panel' }
           horizontalPosition="left"
-          onBeforeShow={ this.onBeforeShow.bind(this) }
           onRenderItems={ this.onRenderItems.bind(this) }
+          onBeforeShow={ this.onBeforeShow.bind(this) }
+          onBeforeHide={ this.onBeforeHide.bind(this) }
         >
           {
             this.onRenderItems(this.state.itemsToSelect, false)

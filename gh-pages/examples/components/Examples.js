@@ -21,12 +21,24 @@ class Examples extends React.Component {
     }, 1000);
   }
 
-  onChangedItems(selectedItems, itemsToSelect) {
-    console.log(selectedItems)
-  }
-
   onGetTextItem(itemsToRender) {
     return itemsToRender.number + ' - ' + itemsToRender.name;
+  }
+
+  onChangedItems(selectedItems, itemsToSelect) {
+    console.log(selectedItems);
+  }
+
+  onItemAdded(selectedItems, itemsToSelect) {
+    console.log(selectedItems);
+  }
+
+  onItemRemoved(selectedItems, itemsToSelect) {
+    console.log(selectedItems);
+  }
+
+  onBeforeHide() {
+    console.log('before Hide');
   }
 
   render() {
@@ -43,6 +55,9 @@ class Examples extends React.Component {
           selectedItems={ this.state.selectedMonts }
           onChangedItems={ this.onChangedItems.bind(this) }
           onGetTextItem={ this.onGetTextItem.bind(this) }
+          onItemAdded={ this.onItemAdded.bind(this) }
+          onItemRemoved={ this.onItemRemoved.bind(this) }
+          onBeforeHide={ this.onBeforeHide.bind(this) }
         >
         </PopoverSelector>
 
