@@ -25,6 +25,10 @@ class Examples extends React.Component {
     return itemsToRender.number + ' - ' + itemsToRender.name;
   }
 
+  onGetTooltipText(itemsToRender) {
+    return itemsToRender.number + ' - ' + itemsToRender.name + ' Tooltip text here...';
+  }
+
   onChangedItems(selectedItems, itemsToSelect) {
     console.log(selectedItems);
   }
@@ -55,6 +59,7 @@ class Examples extends React.Component {
           selectedItems={ this.state.selectedMonts }
           onChangedItems={ this.onChangedItems.bind(this) }
           onGetTextItem={ this.onGetTextItem.bind(this) }
+          onGetTooltipText={ this.onGetTooltipText.bind(this) }
           onItemAdded={ this.onItemAdded.bind(this) }
           onItemRemoved={ this.onItemRemoved.bind(this) }
           onBeforeHide={ this.onBeforeHide.bind(this) }
@@ -149,7 +154,7 @@ const months = [
     "days": 30
   },
   {
-    "id": 12,    
+    "id": 12,
     "name": "December",
     "short": "Dec",
     "number": 12,
