@@ -17,7 +17,7 @@ class DeniReactSelectorPopoverItem extends React.Component {
   render() {
     let itemId = this.props.item.id || undefined;
     return (
-      <div itemid={ itemId } className="deni-react-popover-selector-item-container" onClick={ this.selectorItemClick.bind(this) } title={ this.props.onGetTooltipText(this.props.item) } >
+      <div itemID={ itemId } className="deni-react-popover-selector-item-container" onClick={ this.selectorItemClick.bind(this) } title={ this.props.onGetTooltipText(this.props.item) } >
         <div className={ 'deni-react-popover-selector-item' + (this.props.showCloseButton ? '' : ' no-close-button') }>
           {
             this.props.showCloseButton ? (

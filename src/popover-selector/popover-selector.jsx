@@ -94,6 +94,13 @@ class DeniReactSelectorPopover extends React.Component {
     });
   }
 
+  onGetTooltipText(itemToRender) {
+    if (this.props.onGetTooltipText) {
+      return this.props.onGetTooltipText.call(this, itemToRender)
+    }
+    return null
+  }
+
   onRenderItems(itemsToRender, showCloseButton) {
     return (
       itemsToRender.map(itemToRender => {
@@ -103,7 +110,7 @@ class DeniReactSelectorPopover extends React.Component {
             item={ itemToRender }
             showCloseButton={ showCloseButton }
             onGetText={ this.props.onGetTextItem.bind(this) }
-            onGetTooltipText={ this.props.onGetTooltipText.bind(this) }
+            onGetTooltipText={ this.onGetTooltipText.bind(this) }
             onAddItem={ this.onAddItem.bind(this) }
             onRemoveItem={ this.onRemoveItem.bind(this) }
             selectorPopover={ this }
