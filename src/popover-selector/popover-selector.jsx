@@ -168,7 +168,7 @@ class DeniReactSelectorPopover extends React.Component {
             <input
               className="deni-react-popover-selector-input"
               onKeyUp={ this.selectorInputKeyUp.bind(this) }
-              placeholder='digite para filtrar'
+              placeholder='type to filter'
             />
           }
         </div>
@@ -193,10 +193,18 @@ class DeniReactSelectorPopover extends React.Component {
   _getItemsToSelect(allItems, selectedItems) {
     let itemsToSelect;
     if (selectedItems) {
+      let selectedItemsIds = selectedItems.map(selectedItem => {
+        return selectedItem.id
+      })
       let found;
       itemsToSelect = allItems.filter(item => {
         try {
-          found = selectedItems.indexOf(item) !== -1;
+          let itemId = item.id
+          if (itemId) {
+            found = selectedItemsIds.indexOf(itemId) !== -1;
+          } else {
+            found = selectedItems.indexOf(item) !== -1;
+          }
         } catch (error)   {
           console.log(error);
         }
