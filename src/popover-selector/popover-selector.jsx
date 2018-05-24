@@ -34,10 +34,10 @@ class DeniReactSelectorPopover extends React.Component {
         this._getInputElement().value = '';
         this._getInputElement().focus();
       }
-      if (!this.closeButtonClicked) {
+      if (!this.preventShowPopover) {
         this.popoverRef.show();
       }
-      this.closeButtonClicked = false;
+      this.preventShowPopover = false;
     }, 150)
   }
 
@@ -125,13 +125,14 @@ class DeniReactSelectorPopover extends React.Component {
     if (this.popoverRef.isShowing()) {
       if (e.keyCode === 13) { //RETURN
         if (this.state.itemsToSelect.length === 1) {
-          this.onAddItem(this.state.itemsToSelect[0]);
+          this.onAddItem(this.state.itemsToSelect[0])
+          this._getInputElement().value = ''
         }
       } else if (e.keyCode === 27) { //ESCAPE
-        this.popoverRef.hide();
+        this.popoverRef.hide()
       }
     } else {
-      this.popoverRef.show();
+      this.popoverRef.show()
     }
 
     this.setState({

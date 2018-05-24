@@ -10,7 +10,7 @@ class DeniReactSelectorPopoverItem extends React.Component {
   }
 
   closeButtonClick() {
-    this.props.selectorPopover.closeButtonClicked = true;
+    this.props.selectorPopover.preventShowPopover = true;
     this.props.onRemoveItem(this.props.item);
   }
 

@@ -18,7 +18,7 @@ class Examples extends React.Component {
         months: months,
         selectedMonts: months.slice(0, 5)
       });
-    }, 1000);
+    }, 200); //just to get async
   }
 
   onGetTextItem(itemsToRender) {
