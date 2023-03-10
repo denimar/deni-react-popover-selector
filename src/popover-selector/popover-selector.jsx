@@ -70,7 +70,7 @@ class DeniReactSelectorPopover extends React.Component {
 
       this.init();
       if (this.props.onItemAdded) {
-        this.props.onItemAdded(itemToAdd);
+        this.props.onItemAdded(selectedItems, itemToAdd);
       }
     });
   }

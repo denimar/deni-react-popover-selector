@@ -34,7 +34,7 @@ class Examples extends React.Component {
   }
 
   onItemAdded(selectedItems, itemsToSelect) {
-    console.log(selectedItems);
+    console.log(selectedItems, itemsToSelect);
   }
 
   onItemRemoved(selectedItems, itemsToSelect) {
